@@ -1,0 +1,6 @@
+{
+  "root": "../../",
+  "ignore": ["locales", "logs", "keys", "public", "tests", "views", "node_modules"],
+  "output": "../../locales",
+  "locales": ["ru", "ua"]
+}

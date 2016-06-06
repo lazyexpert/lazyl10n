@@ -1,0 +1,16 @@
+{
+  "name": "lazyl10n",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express-locale": "^0.1.2",
+    "minimist": "^1.2.0",
+    "sprintf-js": "^1.0.3"
+  }
+}

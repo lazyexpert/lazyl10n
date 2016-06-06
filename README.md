@@ -1,2 +1,2 @@
-# lazyl10n
-nodejs variant of localization implementation
+Пока не забыл:
+Для наиболее корректной работы middleware этого модуля нужно подключить после инициализации паспорта и сессий.
