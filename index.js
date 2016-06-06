@@ -9,6 +9,7 @@ const localePckg = require("express-locale"),
       parse = require('./parse')
 
 const m = module.exports
+
 /*
   Express Middleware
   Expect options object.
@@ -18,11 +19,12 @@ const m = module.exports
   }
 */
 module.exports.init = options => {
+  // console.log(options)
   m.languages = options.languages
 
-  m.config = requrie(options.config)
-
   m.locales_folder = options.locales_folder
+
+  parse(options.config)
 
   /* Loaded to memory locales */
   global.locales = null
@@ -61,8 +63,6 @@ module.exports.loadLocales = () => {
   }
 }
 
-module.exports.parse = parse(m.config)
-
 /*
   Main method. Translates provided text to the most comfortable locale
   Assumed to have req object somewere in clojure
@@ -73,7 +73,7 @@ module.exports.getText = function(text) {
   else if( global.locales['en-US'][text] )
     return global.locales['en-US'][text].singular
   else {
-    console.warn("Couldn't find correct text")
+    console.warn(`Couldn't find correct text for key: ${text}`)
     return text
   }
 }

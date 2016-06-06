@@ -10,9 +10,10 @@ const fs = require('fs'),
 
 const default_locale = 'en-US'
 
-let app_root, locales,ignore_list = ['node_modules'], output
+let app_root, locales, ignore_list = ['node_modules'], output
 
 module.exports = function(config) {
+  //console.log(config)
   app_root = config.root
   ignore_list = config.ignore
   output = config.output
@@ -20,8 +21,7 @@ module.exports = function(config) {
 
   output = path.join(__dirname, output)
 
-
-  console.log(`Arguments: \napp_root: ${app_root} \nignore_list: ${ignore_list.join(', ')} \nlocales: ${locales.join(', ')} \noutput: ${output}`)
+  //console.log(`Arguments: \napp_root: ${app_root} \nignore_list: ${ignore_list.join(', ')} \nlocales: ${locales.join(', ')} \noutput: ${output}`)
 
   let fileList = []
 

@@ -1,7 +1,7 @@
 {
   "name": "lazyl10n",
   "version": "1.0.1",
-  "description": "",
+  "description": "Пока не забыл: Для наиболее корректной работы middleware этого модуля нужно подключить после инициализации паспорта и сессий.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,7 +10,11 @@
   "license": "ISC",
   "dependencies": {
     "express-locale": "^0.1.2",
-    "minimist": "^1.2.0",
     "sprintf-js": "^1.0.3"
-  }
+  },
+  "readmeFilename": "README.md",
+  "gitHead": "9e2e1cd91f20229c7c480c18f59b345eee5adba1",
+  "_id": "lazyl10n@1.0.1",
+  "_shasum": "47ef72dc07f57b5a25622b379120393edb69c23c",
+  "_from": "lazyl10n@latest"
 }
