@@ -5,7 +5,8 @@ const localePckg = require("express-locale"),
       fs = require('fs'),
       path = require('path'),
       sprintf = require('sprintf-js').sprintf,
-      vsprintf = require('sprintf-js').vsprintf
+      vsprintf = require('sprintf-js').vsprintf,
+      parse = require('./parse')
 
 const m = module.exports
 /*
@@ -18,6 +19,8 @@ const m = module.exports
 */
 module.exports.init = options => {
   m.languages = options.languages
+
+  m.config = requrie(options.config)
 
   m.locales_folder = options.locales_folder
 
@@ -57,6 +60,8 @@ module.exports.loadLocales = () => {
       global.locales[lang] = require(`${m.locales_folder}${lang}.json`))
   }
 }
+
+module.exports.parse = parse(m.config)
 
 /*
   Main method. Translates provided text to the most comfortable locale
