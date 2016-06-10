@@ -1,7 +1,7 @@
 {
   "name": "lazyl10n",
   "version": "0.0.2",
-  "description": "Пока не забыл: Для наиболее корректной работы middleware этого модуля нужно подключить после инициализации паспорта и сессий.",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
