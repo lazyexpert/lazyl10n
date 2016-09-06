@@ -1,8 +1,4 @@
 'use strict'
-/*
-  Пример моего рабочего запроса
-  node parse.js -r ../../ -i 'locales, logs, keys, public, tests, views, node_modules' -o ../../locales/ -l 'en-US, ru, ua'
-*/
 
 /* Dependencies */
 const fs = require('fs'),
@@ -13,7 +9,6 @@ const default_locale = 'en-US'
 let app_root, locales, ignore_list = ['node_modules'], output
 
 module.exports = function(config) {
-  //console.log(config)
   app_root = config.root
   ignore_list = config.ignore
   output = config.output
@@ -21,15 +16,13 @@ module.exports = function(config) {
 
   output = path.join(__dirname, output)
 
-  //console.log(`Arguments: \napp_root: ${app_root} \nignore_list: ${ignore_list.join(', ')} \nlocales: ${locales.join(', ')} \noutput: ${output}`)
-
   let fileList = []
 
   /* Get files list */
   function collectFiles(path) {
     let folderList = fs.readdirSync(path).filter(el => {
       for(let t=0;t<ignore_list.length; t++)
-        if(new RegExp(ignore_list[t]).test(el)) return false
+        if(new RegExp(ignore_list[t]+"$").test(el)) return false
 
       if(/\.js$/.test(el)) {
         fileList.push(`${path}/${el}`)
