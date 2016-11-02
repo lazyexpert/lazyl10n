@@ -1,6 +1,7 @@
+# Description
 This module is provided as is. Use it on your own risks.
 
-Brief:
+# Brief:
 Module can collect all used strings from you source code.
 
 According to configured locales creates default locale overwriting existing data

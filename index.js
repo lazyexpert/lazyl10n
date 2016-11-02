@@ -21,7 +21,6 @@ const m = module.exports
 module.exports.init = options => {
   // console.log(options)
   m.languages = options.languages
-
   m.locales_folder = options.locales_folder
 
   parse(options.config)
@@ -32,7 +31,7 @@ module.exports.init = options => {
   m.loadLocales()
 
   return function(req, res, next) {
-    let localefn = localePckg({ 'default' : 'en-US' })
+    let localefn = localePckg({ 'default' : options.default || 'en-US' })
     let userPick = req.session && req.session.locale ||
                    req.user && req.user.locale || null
 
