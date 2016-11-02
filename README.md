@@ -12,11 +12,13 @@ Can ignore folders, pass them to parser config.
 
 The best use(currently the only) is with passport middleware and express-session module.
 
+# Installation
 Install module:
 ``` javascript
 const lazyl10n = require('lazyl10n')
 ```
 
+# Initialization
 Init module:
 ``` javascript
 // Init module after passport and sessions middleware
@@ -25,6 +27,7 @@ Init module:
 app.use(lazyl10n.init({
     languages : ['en-US', 'ru', 'ua'],
     locales_folder : path.join(__dirname, '../../locales/'),
+    default: 'ru',
     // This config is actually config of parser
     config : {
       "root": path.join(__dirname, '../../'),
@@ -36,7 +39,7 @@ app.use(lazyl10n.init({
 ```
 
 
-Usage:
+# Usage:
 ``` javascript
 // For usual case
 req.getText("Site title")
