@@ -33,7 +33,7 @@ module.exports.init = options => {
   return function(req, res, next) {
     let localefn = localePckg({ 'default' :  m.default})
     let userPick = req.session && req.session.locale ||
-                   req.user && req.user.locale || null
+                   req.user && req.user.locale || m.default
 
     function attach() {
       if(req.user && req.user.locale)
